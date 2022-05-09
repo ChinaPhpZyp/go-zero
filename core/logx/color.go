@@ -1,9 +1,8 @@
 package logx
 
 import (
-	"sync/atomic"
-
 	"github.com/xiaoshouchen/go-zero/core/color"
+	"sync/atomic"
 )
 
 // WithColor is a helper function to add color to a string, only in plain encoding.
