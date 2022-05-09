@@ -81,7 +81,11 @@ func (tp *TokenParser) ParseToken(r *http.Request, secret, prevSecret string) (*
 func (tp *TokenParser) doParseToken(r *http.Request, secret string) (*jwt.Token, error) {
 	return request.ParseFromRequest(r, request.AuthorizationHeaderExtractor,
 		func(token *jwt.Token) (interface{}, error) {
-			return secret, nil
+			pem, err := jwt.ParseRSAPublicKeyFromPEM([]byte(secret))
+			if err != nil {
+				return nil, err
+			}
+			return pem, nil
 		}, request.WithParser(newParser()))
 }
 
