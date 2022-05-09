@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zeromicro/go-zero/tools/goctl/api/spec"
-	"github.com/zeromicro/go-zero/tools/goctl/config"
-	"github.com/zeromicro/go-zero/tools/goctl/util/format"
-	"github.com/zeromicro/go-zero/tools/goctl/vars"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/api/spec"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/config"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util/format"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/vars"
 )
 
 const (

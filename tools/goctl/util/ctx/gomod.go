@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/zeromicro/go-zero/tools/goctl/rpc/execx"
-	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/rpc/execx"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util/pathx"
 )
 
 // Module contains the relative data of go module,

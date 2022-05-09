@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/zeromicro/go-zero/core/mapping"
-	"github.com/zeromicro/go-zero/rest/internal/encoding"
-	"github.com/zeromicro/go-zero/rest/internal/header"
+	"github.com/xiaoshouchen/go-zero/core/mapping"
+	"github.com/xiaoshouchen/go-zero/rest/internal/encoding"
+	"github.com/xiaoshouchen/go-zero/rest/internal/header"
 )
 
 // Parse parses the response.

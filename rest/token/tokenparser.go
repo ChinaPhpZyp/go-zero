@@ -8,7 +8,7 @@ import (
 
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/golang-jwt/jwt/v4/request"
-	"github.com/zeromicro/go-zero/core/timex"
+	"github.com/xiaoshouchen/go-zero/core/timex"
 )
 
 const claimHistoryResetDuration = time.Hour * 24
@@ -81,7 +81,7 @@ func (tp *TokenParser) ParseToken(r *http.Request, secret, prevSecret string) (*
 func (tp *TokenParser) doParseToken(r *http.Request, secret string) (*jwt.Token, error) {
 	return request.ParseFromRequest(r, request.AuthorizationHeaderExtractor,
 		func(token *jwt.Token) (interface{}, error) {
-			return []byte(secret), nil
+			return secret, nil
 		}, request.WithParser(newParser()))
 }
 

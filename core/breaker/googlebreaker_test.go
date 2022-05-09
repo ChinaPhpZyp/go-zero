@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zeromicro/go-zero/core/collection"
-	"github.com/zeromicro/go-zero/core/mathx"
-	"github.com/zeromicro/go-zero/core/stat"
+	"github.com/xiaoshouchen/go-zero/core/collection"
+	"github.com/xiaoshouchen/go-zero/core/mathx"
+	"github.com/xiaoshouchen/go-zero/core/stat"
 )
 
 const (

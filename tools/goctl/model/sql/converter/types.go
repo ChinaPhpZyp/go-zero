@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zeromicro/ddl-parser/parser"
+	"github.com/xiaoshouchen/ddl-parser/parser"
 )
 
 var commonMysqlDataTypeMapInt = map[int]string{

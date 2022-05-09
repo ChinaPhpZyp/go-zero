@@ -6,11 +6,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/zeromicro/go-zero/core/lang"
-	"github.com/zeromicro/go-zero/core/proc"
-	"github.com/zeromicro/go-zero/core/syncx"
-	"github.com/zeromicro/go-zero/core/threading"
-	"github.com/zeromicro/go-zero/core/timex"
+	"github.com/xiaoshouchen/go-zero/core/lang"
+	"github.com/xiaoshouchen/go-zero/core/proc"
+	"github.com/xiaoshouchen/go-zero/core/syncx"
+	"github.com/xiaoshouchen/go-zero/core/threading"
+	"github.com/xiaoshouchen/go-zero/core/timex"
 )
 
 const idleRound = 10

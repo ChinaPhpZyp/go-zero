@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zeromicro/go-zero/rest/internal"
+	"github.com/xiaoshouchen/go-zero/rest/internal"
 )
 
 func init() {

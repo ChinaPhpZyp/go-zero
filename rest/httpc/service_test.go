@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zeromicro/go-zero/rest/internal/header"
+	"github.com/xiaoshouchen/go-zero/rest/internal/header"
 )
 
 func TestNamedService_DoRequest(t *testing.T) {

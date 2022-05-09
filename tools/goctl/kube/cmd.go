@@ -57,7 +57,7 @@ func init() {
 		"--home and --remote cannot be set at the same time, if they are, --remote has higher priority")
 	deployCmd.Flags().StringVar(&varStringRemote, "remote", "", "The remote git repo of the template, "+
 		"--home and --remote cannot be set at the same time, if they are, --remote has higher priority\n\tThe git repo "+
-		"directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure")
+		"directory must be consistent with the https://github.com/xiaoshouchen/go-zero-template directory structure")
 	deployCmd.Flags().StringVar(&varStringBranch, "branch", "", "The branch of the remote repo, it "+
 		"does work with --remote")
 	deployCmd.Flags().StringVar(&varStringServiceAccount, "serviceAccount", "", "The ServiceAccount "+

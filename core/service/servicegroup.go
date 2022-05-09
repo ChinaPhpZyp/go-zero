@@ -3,9 +3,9 @@ package service
 import (
 	"log"
 
-	"github.com/zeromicro/go-zero/core/proc"
-	"github.com/zeromicro/go-zero/core/syncx"
-	"github.com/zeromicro/go-zero/core/threading"
+	"github.com/xiaoshouchen/go-zero/core/proc"
+	"github.com/xiaoshouchen/go-zero/core/syncx"
+	"github.com/xiaoshouchen/go-zero/core/threading"
 )
 
 type (

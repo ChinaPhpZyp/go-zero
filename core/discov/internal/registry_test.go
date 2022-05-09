@@ -7,10 +7,10 @@ import (
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/zeromicro/go-zero/core/contextx"
-	"github.com/zeromicro/go-zero/core/lang"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/core/stringx"
+	"github.com/xiaoshouchen/go-zero/core/contextx"
+	"github.com/xiaoshouchen/go-zero/core/lang"
+	"github.com/xiaoshouchen/go-zero/core/logx"
+	"github.com/xiaoshouchen/go-zero/core/stringx"
 	"go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )

@@ -13,13 +13,13 @@ import (
 
 	"github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
-	"github.com/zeromicro/go-zero/core/logx"
-	apiformat "github.com/zeromicro/go-zero/tools/goctl/api/format"
-	"github.com/zeromicro/go-zero/tools/goctl/api/parser"
-	apiutil "github.com/zeromicro/go-zero/tools/goctl/api/util"
-	"github.com/zeromicro/go-zero/tools/goctl/config"
-	"github.com/zeromicro/go-zero/tools/goctl/util"
-	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
+	"github.com/xiaoshouchen/go-zero/core/logx"
+	apiformat "github.com/xiaoshouchen/go-zero/tools/goctl/api/format"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/api/parser"
+	apiutil "github.com/xiaoshouchen/go-zero/tools/goctl/api/util"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/config"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util/pathx"
 )
 
 const tmpFile = "%s-%d"

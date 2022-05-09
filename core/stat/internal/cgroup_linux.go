@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zeromicro/go-zero/core/iox"
-	"github.com/zeromicro/go-zero/core/lang"
+	"github.com/xiaoshouchen/go-zero/core/iox"
+	"github.com/xiaoshouchen/go-zero/core/lang"
 	"golang.org/x/sys/unix"
 )
 

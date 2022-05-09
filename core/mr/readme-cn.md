@@ -26,7 +26,7 @@
 
 以上实际都是在进行对输入数据进行处理最后输出清洗后的数据，针对数据处理有个非常经典的异步模式：生产者消费者模式。于是我们可以抽象一下数据批处理的生命周期，大致可以分为三个阶段：
 
-<img src="https://raw.githubusercontent.com/zeromicro/zero-doc/main/doc/images/mapreduce-serial-cn.png" width="500">
+<img src="https://raw.githubusercontent.com/xiaoshouchen/zero-doc/main/doc/images/mapreduce-serial-cn.png" width="500">
 
 1. 数据生产 generate
 2. 数据加工 mapper
@@ -36,7 +36,7 @@
 
 再来思考一下不同阶段之间数据应该如何流转，既然不同阶段的数据处理都是由不同 goroutine 执行的，那么很自然的可以考虑采用 channel 来实现 goroutine 之间的通信。
 
-<img src="https://raw.githubusercontent.com/zeromicro/zero-doc/main/doc/images/mapreduce-cn.png" width="500">
+<img src="https://raw.githubusercontent.com/xiaoshouchen/zero-doc/main/doc/images/mapreduce-cn.png" width="500">
 
 
 如何实现随时终止流程呢？
@@ -54,7 +54,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/zeromicro/go-zero/core/mr"
+    "github.com/xiaoshouchen/go-zero/core/mr"
 )
 
 func main() {
@@ -82,7 +82,7 @@ func main() {
 }
 ```
 
-更多示例：[https://github.com/zeromicro/zero-examples/tree/main/mapreduce](https://github.com/zeromicro/zero-examples/tree/main/mapreduce)
+更多示例：[https://github.com/xiaoshouchen/zero-examples/tree/main/mapreduce](https://github.com/xiaoshouchen/zero-examples/tree/main/mapreduce)
 
 ## 欢迎 star！⭐
 

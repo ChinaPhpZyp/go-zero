@@ -11,7 +11,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/zeromicro/go-zero/core/color"
+	"github.com/xiaoshouchen/go-zero/core/color"
 )
 
 type (

@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/zeromicro/antlr"
+	"github.com/xiaoshouchen/antlr"
 )
 
 // Suppress unused import errors

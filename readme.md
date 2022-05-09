@@ -1,14 +1,14 @@
-<img align="right" width="150px" src="https://raw.githubusercontent.com/zeromicro/zero-doc/main/doc/images/go-zero.png">
+<img align="right" width="150px" src="https://raw.githubusercontent.com/xiaoshouchen/zero-doc/main/doc/images/go-zero.png">
 
 # go-zero
 
 English | [简体中文](readme-cn.md)
 
-[![Go](https://github.com/zeromicro/go-zero/workflows/Go/badge.svg?branch=master)](https://github.com/zeromicro/go-zero/actions)
-[![codecov](https://codecov.io/gh/zeromicro/go-zero/branch/master/graph/badge.svg)](https://codecov.io/gh/zeromicro/go-zero)
-[![Go Report Card](https://goreportcard.com/badge/github.com/zeromicro/go-zero)](https://goreportcard.com/report/github.com/zeromicro/go-zero)
-[![Release](https://img.shields.io/github/v/release/zeromicro/go-zero.svg?style=flat-square)](https://github.com/zeromicro/go-zero)
-[![Go Reference](https://pkg.go.dev/badge/github.com/zeromicro/go-zero.svg)](https://pkg.go.dev/github.com/zeromicro/go-zero)
+[![Go](https://github.com/xiaoshouchen/go-zero/workflows/Go/badge.svg?branch=master)](https://github.com/xiaoshouchen/go-zero/actions)
+[![codecov](https://codecov.io/gh/xiaoshouchen/go-zero/branch/master/graph/badge.svg)](https://codecov.io/gh/xiaoshouchen/go-zero)
+[![Go Report Card](https://goreportcard.com/badge/github.com/xiaoshouchen/go-zero)](https://goreportcard.com/report/github.com/xiaoshouchen/go-zero)
+[![Release](https://img.shields.io/github/v/release/xiaoshouchen/go-zero.svg?style=flat-square)](https://github.com/xiaoshouchen/go-zero)
+[![Go Reference](https://pkg.go.dev/badge/github.com/xiaoshouchen/go-zero.svg)](https://pkg.go.dev/github.com/xiaoshouchen/go-zero)
 [![Awesome Go](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/avelino/awesome-go)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Discord](https://img.shields.io/discord/794530774463414292?label=chat&logo=discord)](https://discord.gg/4JQvC5A4Fe)
@@ -19,7 +19,7 @@ English | [简体中文](readme-cn.md)
 > 
 > To upgrade from versions eariler than v1.3.0, run the following commands.
 > 
-> `go install github.com/zeromicro/go-zero/tools/goctl@latest`
+> `go install github.com/xiaoshouchen/go-zero/tools/goctl@latest`
 > 
 > `goctl migrate —verbose —version v1.3.3`
 
@@ -38,7 +38,7 @@ Advantages of go-zero:
 * auto validate the request parameters from clients
 * plenty of builtin microservice management and concurrent toolkits
 
-<img src="https://raw.githubusercontent.com/zeromicro/zero-doc/main/doc/images/architecture-en.png" alt="Architecture" width="1500" />
+<img src="https://raw.githubusercontent.com/xiaoshouchen/zero-doc/main/doc/images/architecture-en.png" alt="Architecture" width="1500" />
 
 ## 1. Backgrounds of go-zero
 
@@ -89,7 +89,7 @@ go-zero is a web and rpc framework that integrates lots of engineering practices
 
 As below, go-zero protects the system with a couple of layers and mechanisms:
 
-![Resilience](https://raw.githubusercontent.com/zeromicro/zero-doc/main/doc/images/resilience-en.png)
+![Resilience](https://raw.githubusercontent.com/xiaoshouchen/zero-doc/main/doc/images/resilience-en.png)
 
 ## 4. Future development plans of go-zero
 
@@ -101,16 +101,16 @@ As below, go-zero protects the system with a couple of layers and mechanisms:
 Run the following command under your project:
 
 ```shell
-go get -u github.com/zeromicro/go-zero
+go get -u github.com/xiaoshouchen/go-zero
 ```
 
 ## 6. Quick Start
 
 0. full examples can be checked out from below:
 
-     [Rapid development of microservice systems](https://github.com/zeromicro/zero-doc/blob/main/doc/shorturl-en.md)
+     [Rapid development of microservice systems](https://github.com/xiaoshouchen/zero-doc/blob/main/doc/shorturl-en.md)
 
-     [Rapid development of microservice systems - multiple RPCs](https://github.com/zeromicro/zero-doc/blob/main/docs/zero/bookstore-en.md)
+     [Rapid development of microservice systems - multiple RPCs](https://github.com/xiaoshouchen/zero-doc/blob/main/docs/zero/bookstore-en.md)
 
 1. install goctl
 
@@ -118,10 +118,10 @@ go get -u github.com/zeromicro/go-zero
 
    ```shell
    # for Go 1.15 and earlier
-   GO111MODULE=on go get -u github.com/zeromicro/go-zero/tools/goctl@latest
+   GO111MODULE=on go get -u github.com/xiaoshouchen/go-zero/tools/goctl@latest
    
    # for Go 1.16 and later
-   go install github.com/zeromicro/go-zero/tools/goctl@latest
+   go install github.com/xiaoshouchen/go-zero/tools/goctl@latest
 
    # docker for amd64 architecture
    docker pull kevinwan/goctl
@@ -229,16 +229,16 @@ go get -u github.com/zeromicro/go-zero
 
 ## 7. Benchmark
 
-![benchmark](https://raw.githubusercontent.com/zeromicro/zero-doc/main/doc/images/benchmark.png)
+![benchmark](https://raw.githubusercontent.com/xiaoshouchen/zero-doc/main/doc/images/benchmark.png)
 
 [Checkout the test code](https://github.com/smallnest/go-web-framework-benchmark)
 
 ## 8. Documents (adding)
 
 * [Documents](https://go-zero.dev/en/)
-* [Rapid development of microservice systems](https://github.com/zeromicro/zero-doc/blob/main/doc/shorturl-en.md)
-* [Rapid development of microservice systems - multiple RPCs](https://github.com/zeromicro/zero-doc/blob/main/docs/zero/bookstore-en.md)
-* [Examples](https://github.com/zeromicro/zero-examples)
+* [Rapid development of microservice systems](https://github.com/xiaoshouchen/zero-doc/blob/main/doc/shorturl-en.md)
+* [Rapid development of microservice systems - multiple RPCs](https://github.com/xiaoshouchen/zero-doc/blob/main/docs/zero/bookstore-en.md)
+* [Examples](https://github.com/xiaoshouchen/zero-examples)
 
 ## 9. Chat group
 

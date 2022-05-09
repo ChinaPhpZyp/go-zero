@@ -4,9 +4,9 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/zeromicro/go-zero/core/breaker"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/core/trace"
+	"github.com/xiaoshouchen/go-zero/core/breaker"
+	"github.com/xiaoshouchen/go-zero/core/logx"
+	"github.com/xiaoshouchen/go-zero/core/trace"
 	"go.opentelemetry.io/otel"
 	tracesdk "go.opentelemetry.io/otel/trace"
 )

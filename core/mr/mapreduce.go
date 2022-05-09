@@ -6,8 +6,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/zeromicro/go-zero/core/errorx"
-	"github.com/zeromicro/go-zero/core/lang"
+	"github.com/xiaoshouchen/go-zero/core/errorx"
+	"github.com/xiaoshouchen/go-zero/core/lang"
 )
 
 const (

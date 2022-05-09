@@ -10,10 +10,10 @@ import (
 	nurl "net/url"
 	"strings"
 
-	"github.com/zeromicro/go-zero/core/lang"
-	"github.com/zeromicro/go-zero/core/mapping"
-	"github.com/zeromicro/go-zero/rest/httpc/internal"
-	"github.com/zeromicro/go-zero/rest/internal/header"
+	"github.com/xiaoshouchen/go-zero/core/lang"
+	"github.com/xiaoshouchen/go-zero/core/mapping"
+	"github.com/xiaoshouchen/go-zero/rest/httpc/internal"
+	"github.com/xiaoshouchen/go-zero/rest/internal/header"
 )
 
 var interceptors = []internal.Interceptor{

@@ -1,6 +1,6 @@
 package fx
 
-import "github.com/zeromicro/go-zero/core/errorx"
+import "github.com/xiaoshouchen/go-zero/core/errorx"
 
 const defaultRetryTimes = 3
 

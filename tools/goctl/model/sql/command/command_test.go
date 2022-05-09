@@ -10,9 +10,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zeromicro/go-zero/tools/goctl/config"
-	"github.com/zeromicro/go-zero/tools/goctl/model/sql/gen"
-	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/config"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/model/sql/gen"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util/pathx"
 )
 
 var (

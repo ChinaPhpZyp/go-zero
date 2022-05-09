@@ -6,10 +6,10 @@ import (
 	"time"
 
 	red "github.com/go-redis/redis/v8"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/core/mapping"
-	"github.com/zeromicro/go-zero/core/timex"
-	"github.com/zeromicro/go-zero/core/trace"
+	"github.com/xiaoshouchen/go-zero/core/logx"
+	"github.com/xiaoshouchen/go-zero/core/mapping"
+	"github.com/xiaoshouchen/go-zero/core/timex"
+	"github.com/xiaoshouchen/go-zero/core/trace"
 	"go.opentelemetry.io/otel"
 	tracestd "go.opentelemetry.io/otel/trace"
 )

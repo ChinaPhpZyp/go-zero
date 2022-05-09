@@ -8,13 +8,13 @@ import (
 	"time"
 
 	"github.com/justinas/alice"
-	"github.com/zeromicro/go-zero/core/codec"
-	"github.com/zeromicro/go-zero/core/load"
-	"github.com/zeromicro/go-zero/core/stat"
-	"github.com/zeromicro/go-zero/rest/handler"
-	"github.com/zeromicro/go-zero/rest/httpx"
-	"github.com/zeromicro/go-zero/rest/internal"
-	"github.com/zeromicro/go-zero/rest/internal/response"
+	"github.com/xiaoshouchen/go-zero/core/codec"
+	"github.com/xiaoshouchen/go-zero/core/load"
+	"github.com/xiaoshouchen/go-zero/core/stat"
+	"github.com/xiaoshouchen/go-zero/rest/handler"
+	"github.com/xiaoshouchen/go-zero/rest/httpx"
+	"github.com/xiaoshouchen/go-zero/rest/internal"
+	"github.com/xiaoshouchen/go-zero/rest/internal/response"
 )
 
 // use 1000m to represent 100%

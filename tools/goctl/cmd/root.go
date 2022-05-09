@@ -8,17 +8,17 @@ import (
 
 	"github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
-	"github.com/zeromicro/go-zero/tools/goctl/api"
-	"github.com/zeromicro/go-zero/tools/goctl/bug"
-	"github.com/zeromicro/go-zero/tools/goctl/docker"
-	"github.com/zeromicro/go-zero/tools/goctl/env"
-	"github.com/zeromicro/go-zero/tools/goctl/internal/version"
-	"github.com/zeromicro/go-zero/tools/goctl/kube"
-	"github.com/zeromicro/go-zero/tools/goctl/migrate"
-	"github.com/zeromicro/go-zero/tools/goctl/model"
-	"github.com/zeromicro/go-zero/tools/goctl/rpc"
-	"github.com/zeromicro/go-zero/tools/goctl/tpl"
-	"github.com/zeromicro/go-zero/tools/goctl/upgrade"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/api"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/bug"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/docker"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/env"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/internal/version"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/kube"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/migrate"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/model"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/rpc"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/tpl"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/upgrade"
 )
 
 const (

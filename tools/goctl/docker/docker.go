@@ -11,8 +11,8 @@ import (
 
 	"github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
-	"github.com/zeromicro/go-zero/tools/goctl/util"
-	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util"
+	"github.com/xiaoshouchen/go-zero/tools/goctl/util/pathx"
 )
 
 const (

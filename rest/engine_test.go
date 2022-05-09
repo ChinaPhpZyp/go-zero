@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zeromicro/go-zero/core/conf"
-	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/xiaoshouchen/go-zero/core/conf"
+	"github.com/xiaoshouchen/go-zero/core/logx"
 )
 
 func TestNewEngine(t *testing.T) {
