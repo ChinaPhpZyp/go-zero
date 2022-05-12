@@ -2,10 +2,17 @@ package template
 
 // New defines the template for creating model instance.
 const New = `
-func new{{.upperStartCamelObject}}Model(conn sqlx.SqlConn{{if .withCache}}, c cache.CacheConf{{end}}) *default{{.upperStartCamelObject}}Model {
-	return &default{{.upperStartCamelObject}}Model{
-		{{if .withCache}}CachedConn: sqlc.NewConn(conn, c){{else}}conn:conn{{end}},
-		table:      {{.table}},
+func New{{.upperStartCamelObject}}Model(db ...*gorm.DB) *{{.upperStartCamelObject}}Model {
+	if len(db) >= 1 {
+		return &{{.upperStartCamelObject}}Model{db: db[0]}
 	}
+	return &{{.upperStartCamelObject}}Model{}
+}
+
+func (m {{.upperStartCamelObject}}Model) baseQuery() *gorm.DB {
+	if m.db != nil {
+		return m.db.Model(&{{.upperStartCamelObject}}{})
+	}
+	return db.Db.Model(&{{.upperStartCamelObject}}{})
 }
 `

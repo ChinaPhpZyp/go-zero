@@ -259,36 +259,36 @@ func (g *defaultGenerator) genModel(in parser.Table, withCache bool) (string, er
 		return "", err
 	}
 
-	insertCode, insertCodeMethod, err := genInsert(table, withCache, g.isPostgreSql)
-	if err != nil {
-		return "", err
-	}
-
-	findCode := make([]string, 0)
-	findOneCode, findOneCodeMethod, err := genFindOne(table, withCache, g.isPostgreSql)
-	if err != nil {
-		return "", err
-	}
-
-	ret, err := genFindOneByField(table, withCache, g.isPostgreSql)
-	if err != nil {
-		return "", err
-	}
-
-	findCode = append(findCode, findOneCode, ret.findOneMethod)
-	updateCode, updateCodeMethod, err := genUpdate(table, withCache, g.isPostgreSql)
-	if err != nil {
-		return "", err
-	}
-
-	deleteCode, deleteCodeMethod, err := genDelete(table, withCache, g.isPostgreSql)
-	if err != nil {
-		return "", err
-	}
+	//insertCode, insertCodeMethod, err := genInsert(table, withCache, g.isPostgreSql)
+	//if err != nil {
+	//	return "", err
+	//}
+	//
+	//findCode := make([]string, 0)
+	//findOneCode, findOneCodeMethod, err := genFindOne(table, withCache, g.isPostgreSql)
+	//if err != nil {
+	//	return "", err
+	//}
+	//
+	//ret, err := genFindOneByField(table, withCache, g.isPostgreSql)
+	//if err != nil {
+	//	return "", err
+	//}
+	//
+	//findCode = append(findCode, findOneCode, ret.findOneMethod)
+	//updateCode, updateCodeMethod, err := genUpdate(table, withCache, g.isPostgreSql)
+	//if err != nil {
+	//	return "", err
+	//}
+	//
+	//deleteCode, deleteCodeMethod, err := genDelete(table, withCache, g.isPostgreSql)
+	//if err != nil {
+	//	return "", err
+	//}
 
 	var list []string
-	list = append(list, insertCodeMethod, findOneCodeMethod, ret.findOneInterfaceMethod,
-		updateCodeMethod, deleteCodeMethod)
+	//list = append(list, insertCodeMethod, findOneCodeMethod, ret.findOneInterfaceMethod,
+	//	updateCodeMethod, deleteCodeMethod)
 	typesCode, err := genTypes(table, strings.Join(modelutil.TrimStringSlice(list), pathx.NL), withCache)
 	if err != nil {
 		return "", err
@@ -309,12 +309,12 @@ func (g *defaultGenerator) genModel(in parser.Table, withCache bool) (string, er
 		varsCode:    varsCode,
 		typesCode:   typesCode,
 		newCode:     newCode,
-		insertCode:  insertCode,
-		findCode:    findCode,
-		updateCode:  updateCode,
-		deleteCode:  deleteCode,
-		cacheExtra:  ret.cacheExtra,
-		tableName:   tableName,
+		//insertCode:  insertCode,
+		//findCode:    findCode,
+		//updateCode:  updateCode,
+		//deleteCode:  deleteCode,
+		//cacheExtra:  ret.cacheExtra,
+		tableName: tableName,
 	}
 
 	output, err := g.executeModel(table, code)

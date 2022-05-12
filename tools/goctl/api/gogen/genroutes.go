@@ -24,11 +24,17 @@ const (
 package handler
 
 import (
+	"github.com/golang-jwt/jwt/v4"
 	"net/http"{{if .hasTimeout}}
 	"time"{{end}}
 
 	{{.importPackages}}
 )
+
+func getJwtSecret(secret string) interface{} {
+	pem, _ := jwt.ParseRSAPublicKeyFromPEM([]byte(secret))
+	return pem
+}
 
 func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	{{.routesAdditions}}
@@ -101,10 +107,10 @@ func genRoutes(dir, rootPkg string, cfg *config.Config, api *spec.ApiSpec) error
 
 		var jwt string
 		if g.jwtEnabled {
-			jwt = fmt.Sprintf("\n rest.WithJwt(serverCtx.Config.%s.AccessSecret),", g.authName)
+			jwt = fmt.Sprintf("\n rest.WithJwt(getJwtSecret(serverCtx.Config.%s.AccessSecret)),", g.authName)
 		}
 		if len(g.jwtTrans) > 0 {
-			jwt = jwt + fmt.Sprintf("\n rest.WithJwtTransition(serverCtx.Config.%s.PrevSecret,serverCtx.Config.%s.Secret),", g.jwtTrans, g.jwtTrans)
+			jwt = jwt + fmt.Sprintf("\n rest.WithJwtTransition(getJwtSecret(serverCtx.Config.%s.PrevSecret),getJwtSecret(serverCtx.Config.%s.Secret)),", g.jwtTrans, g.jwtTrans)
 		}
 		var signature, prefix string
 		if g.signatureEnabled {

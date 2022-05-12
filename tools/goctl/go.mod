@@ -13,5 +13,6 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/xiaoshouchen/antlr v0.0.2
 	github.com/xiaoshouchen/ddl-parser v1.0.4
-	github.com/xiaoshouchen/go-zero v1.3.4
+	github.com/xiaoshouchen/go-zero v1.3.7
+	github.com/zeromicro/ddl-parser v1.0.3 // indirect
 )
