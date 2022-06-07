@@ -8,9 +8,15 @@ type {{.logic}} struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
+	uid    int64
 }
 
 func New{{.logic}}(ctx context.Context, svcCtx *svc.ServiceContext) *{{.logic}} {
+    uid := ctx.Value("uid")
+	var uid64 int64
+	if uid != nil {
+		uid64 = int64(uid.(int))
+	}
 	return &{{.logic}}{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
