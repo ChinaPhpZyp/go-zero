@@ -98,7 +98,7 @@ func (p *DefaultProtoParser) Parse(src string) (Proto, error) {
 	var group string
 	for _, item := range service.Service.Elements {
 		v := item.(*proto.RPC)
-		if v.Comment != nil && len(v.Comment.Lines) == 0 {
+		if v.Comment == nil || len(v.Comment.Lines) == 0 {
 			return ret, fmt.Errorf("functionName %v, must have comment", v.Name)
 		}
 		if v.Comment != nil && len(v.Comment.Lines) > 1 {
