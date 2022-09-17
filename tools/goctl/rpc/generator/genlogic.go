@@ -31,12 +31,15 @@ func (g *Generator) GenLogic(ctx DirContext, proto parser.Proto, cfg *conf.Confi
 	dir := ctx.GetLogic()
 	service := proto.Service.Service.Name
 	for _, rpc := range proto.Service.RPC {
+		fileName := proto.Group[rpc.Name]
 		logicFilename, err := format.FileNamingFormat(cfg.NamingFormat, rpc.Name+"_logic")
 		if err != nil {
 			return err
 		}
+		// 根据分组注释进行创建文件夹
+		pathx.MkdirIfNotExist(filepath.Join(dir.Filename, fileName))
 
-		filename := filepath.Join(dir.Filename, logicFilename+".go")
+		filename := filepath.Join(dir.Filename, fileName, logicFilename+".go")
 		functions, err := g.genLogicFunction(service, proto.PbPackage, rpc)
 		if err != nil {
 			return err
@@ -67,7 +70,6 @@ func (g *Generator) genLogicFunction(serviceName, goPackage string, rpc *parser.
 	if err != nil {
 		return "", err
 	}
-
 	logicName := stringx.From(rpc.Name + "_logic").ToCamel()
 	comment := parser.GetComment(rpc.Doc())
 	streamServer := fmt.Sprintf("%s.%s_%s%s", goPackage, parser.CamelCase(serviceName), parser.CamelCase(rpc.Name), "Server")
@@ -90,4 +92,11 @@ func (g *Generator) genLogicFunction(serviceName, goPackage string, rpc *parser.
 
 	functions = append(functions, buffer.String())
 	return strings.Join(functions, pathx.NL), nil
+}
+
+func (g *Generator) getFileDirName(lines []string) string {
+	if len(lines) < 2 {
+		return ""
+	}
+	return strings.TrimSpace(strings.Replace(lines[1], "@", "", 1))
 }

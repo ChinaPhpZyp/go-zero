@@ -42,6 +42,7 @@ message RepeatedReq{
 }
 
 service Test_Service {
+  // @order
   // service
   rpc Service (Req) returns (Reply);
   // greet service
@@ -52,12 +53,14 @@ service Test_Service {
   rpc CamelService (CamelReq) returns (CamelReply);
   // case enum
   rpc EnumService (EnumMessage) returns (CommonReply);
+  // @user
   // case map
   rpc MapService (MapReq) returns (CommonReply);
   // case repeated
   rpc RepeatedService (RepeatedReq) returns (CommonReply);
   // server stream
   rpc ServerStream (Req) returns (stream Reply);
+  // @END
   // client stream
   rpc ClientStream (stream Req) returns (Reply);
   // stream
