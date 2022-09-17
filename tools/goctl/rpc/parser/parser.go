@@ -27,7 +27,7 @@ func NewDefaultProtoParser() *DefaultProtoParser {
 // which is convenient for subsequent rpc generation and use
 func (p *DefaultProtoParser) Parse(src string) (Proto, error) {
 	var ret Proto
-
+	ret.Group = make(map[string]string)
 	abs, err := filepath.Abs(src)
 	if err != nil {
 		return Proto{}, err
@@ -93,6 +93,22 @@ func (p *DefaultProtoParser) Parse(src string) (Proto, error) {
 		if strings.Contains(rpc.ReturnsType, ".") {
 			return ret, fmt.Errorf("line %v:%v, returns type must defined in %s", rpc.Position.Line, rpc.Position.Column, name)
 		}
+	}
+
+	var group string
+	for _, item := range service.Service.Elements {
+		v := item.(*proto.RPC)
+		if v.Comment == nil || len(v.Comment.Lines) == 0 {
+			return ret, fmt.Errorf("functionName %v, must have comment", v.Name)
+		}
+		if v.Comment != nil && len(v.Comment.Lines) > 1 {
+			if strings.Contains(v.Comment.Lines[0], "@END") {
+				group = ""
+			} else {
+				group = strings.TrimSpace(strings.Replace(v.Comment.Lines[0], "@", "", 1))
+			}
+		}
+		ret.Group[v.Name] = group
 	}
 	if len(ret.GoPackage) == 0 {
 		ret.GoPackage = ret.Package.Name

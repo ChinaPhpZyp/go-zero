@@ -7,5 +7,10 @@ func GetComment(comment *proto.Comment) string {
 	if comment == nil {
 		return ""
 	}
-	return "// " + comment.Message()
+
+	if len(comment.Lines) > 1 {
+		return "// " + comment.Lines[1]
+	} else {
+		return "// " + comment.Message()
+	}
 }

@@ -15,12 +15,13 @@ func New{{.logic}}(ctx context.Context, svcCtx *svc.ServiceContext) *{{.logic}} 
     uid := ctx.Value("uid")
 	var uid64 int64
 	if uid != nil {
-		uid64 = int64(uid.(int))
+		uid64 = uid.(int64))
 	}
 	return &{{.logic}}{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
+		uid: uid64
 	}
 }
 
