@@ -13,8 +13,7 @@ import(
 // only one
 info(
     title: "foo title"
-    desc: "foo
-desc"
+    desc: "foo desc"
     author: "foo author"
     email: "foo email"
     version: "foo version"

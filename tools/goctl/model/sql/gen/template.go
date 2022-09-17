@@ -30,7 +30,6 @@ const (
 	updateTemplateFile                    = "update.tpl"
 	updateMethodTemplateFile              = "interface-update.tpl"
 	varTemplateFile                       = "var.tpl"
-	errTemplateFile                       = "err.tpl"
 )
 
 var templates = map[string]string{
@@ -55,7 +54,6 @@ var templates = map[string]string{
 	updateTemplateFile:                    template.Update,
 	updateMethodTemplateFile:              template.UpdateMethod,
 	varTemplateFile:                       template.Vars,
-	errTemplateFile:                       template.Error,
 }
 
 // Category returns model const value

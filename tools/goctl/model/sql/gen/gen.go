@@ -177,25 +177,6 @@ func (g *defaultGenerator) createFile(modelList map[string]*codeTuple) error {
 		}
 	}
 
-	// generate error file
-	varFilename, err := format.FileNamingFormat(g.cfg.NamingFormat, "vars")
-	if err != nil {
-		return err
-	}
-
-	filename := filepath.Join(dirAbs, varFilename+".go")
-	text, err := pathx.LoadTemplate(category, errTemplateFile, template.Error)
-	if err != nil {
-		return err
-	}
-
-	err = util.With("vars").Parse(text).SaveTo(map[string]interface{}{
-		"pkg": g.pkg,
-	}, filename, false)
-	if err != nil {
-		return err
-	}
-
 	g.Success("Done.")
 	return nil
 }
