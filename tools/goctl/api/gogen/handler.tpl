@@ -5,7 +5,6 @@ import (
 
 	"github.com/xiaoshouchen/go-zero/rest/httpx"
 	{{.ImportPackages}}
-	"hbb_micro/common/response"
 )
 
 func {{.HandlerName}}(svcCtx *svc.ServiceContext) http.HandlerFunc {
