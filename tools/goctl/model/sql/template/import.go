@@ -15,6 +15,7 @@ const (
 	"context"
 	"database/sql"
 	"fmt"
+	"gorm.io/gorm"
 	{{if .time}}"time"{{end}}
 )
 `

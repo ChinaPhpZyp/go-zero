@@ -16,7 +16,6 @@ var ModelGen = fmt.Sprintf(`%s
 
 package {{.pkg}}
 {{.imports}}
-{{.vars}}
 {{.types}}
 {{.new}}
 {{.insert}}
