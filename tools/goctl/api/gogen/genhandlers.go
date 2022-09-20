@@ -99,6 +99,9 @@ func genHandlerImports(group spec.Group, route spec.Route, parentPkg string) str
 	if len(route.RequestTypeName()) > 0 {
 		imports = append(imports, fmt.Sprintf("\"%s\"\n", pathx.JoinPackages(parentPkg, typesDir)))
 	}
+	pathArr := strings.Split(parentPkg, "/")
+	imports = append(imports, fmt.Sprintf("\"%s/common/response\"", pathArr[0]))
+	imports = append(imports, fmt.Sprintf("\"%s/common/validator\"", pathArr[0]))
 
 	currentVersion := version.GetGoctlVersion()
 	// todo(anqiansong): This will be removed after a certain number of production versions of goctl (probably 5)
