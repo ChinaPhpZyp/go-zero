@@ -18,7 +18,7 @@ import (
 const functionTemplate = `
 {{if .hasComment}}{{.comment}}{{end}}
 func (s *{{.server}}Server) {{.method}} ({{if .notStream}}ctx context.Context,{{if .hasReq}} in {{.request}}{{end}}{{else}}{{if .hasReq}} in {{.request}},{{end}}stream {{.streamBody}}{{end}}) ({{if .notStream}}{{.response}},{{end}}error) {
-	l := logic.New{{.logicName}}({{if .notStream}}ctx,{{else}}stream.Context(),{{end}}s.svcCtx)
+	l := {{logicPkgName}}.New{{.logicName}}({{if .notStream}}ctx,{{else}}stream.Context(),{{end}}s.svcCtx)
 	return l.{{.method}}({{if .hasReq}}in{{if .stream}} ,stream{{end}}{{else}}{{if .stream}}stream{{end}}{{end}})
 }
 `
@@ -32,9 +32,15 @@ func (g *Generator) GenServer(ctx DirContext, proto parser.Proto, cfg *conf.Conf
 	logicImport := fmt.Sprintf(`"%v"`, ctx.GetLogic().Package)
 	svcImport := fmt.Sprintf(`"%v"`, ctx.GetSvc().Package)
 	pbImport := fmt.Sprintf(`"%v"`, ctx.GetPb().Package)
+	var groupImport string
+	for _, item := range proto.Group {
+		if item != "" {
+			groupImport = groupImport + fmt.Sprintf("%v %v\n", item+"_logic", "\""+ctx.GetLogic().Package+"/"+item+"\"")
+		}
+	}
 
 	imports := collection.NewSet()
-	imports.AddStr(logicImport, svcImport, pbImport)
+	imports.AddStr(logicImport, svcImport, pbImport, groupImport)
 
 	head := util.GetHead(proto.Name)
 	service := proto.Service
@@ -44,7 +50,7 @@ func (g *Generator) GenServer(ctx DirContext, proto parser.Proto, cfg *conf.Conf
 	}
 
 	serverFile := filepath.Join(dir.Filename, serverFilename+".go")
-	funcList, err := g.genFunctions(proto.PbPackage, service)
+	funcList, err := g.genFunctions(proto.PbPackage, service, proto)
 	if err != nil {
 		return err
 	}
@@ -73,7 +79,7 @@ func (g *Generator) GenServer(ctx DirContext, proto parser.Proto, cfg *conf.Conf
 	return err
 }
 
-func (g *Generator) genFunctions(goPackage string, service parser.Service) ([]string, error) {
+func (g *Generator) genFunctions(goPackage string, service parser.Service, proto parser.Proto) ([]string, error) {
 	var functionList []string
 	for _, rpc := range service.RPC {
 		text, err := pathx.LoadTemplate(category, serverFuncTemplateFile, functionTemplate)
@@ -81,6 +87,13 @@ func (g *Generator) genFunctions(goPackage string, service parser.Service) ([]st
 			return nil, err
 		}
 
+		logicPkgName := proto.Group[rpc.Name]
+		if logicPkgName == "" {
+			logicPkgName = "logic"
+		} else {
+			logicPkgName = logicPkgName + "_logic"
+		}
+		text = strings.Replace(text, "{{logicPkgName}}", logicPkgName, 1)
 		comment := parser.GetComment(rpc.Doc())
 		streamServer := fmt.Sprintf("%s.%s_%s%s", goPackage, parser.CamelCase(service.Name), parser.CamelCase(rpc.Name), "Server")
 		buffer, err := util.With("func").Parse(text).Execute(map[string]interface{}{
